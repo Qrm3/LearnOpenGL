@@ -31,7 +31,7 @@ FOR /F %%f in ('DIR /s /b "*.c"') DO (
 POPD
 
 SET COMPILE_FLAGS=-ggdb -m64 -Werror
-SET INCLUDE_FLAGS=-I "%PROJECT_DIR%" -I "%GLFW_DIR%\include" -I "%LIBS_DIR%\glad\include"
+SET INCLUDE_FLAGS=-I "%ROOT_DIR%\include" -I "%PROJECT_DIR%" -I "%GLFW_DIR%\include" -I "%LIBS_DIR%\glad\include"
 SET LINKER_FLAGS=-Wl,--whole-archive "%GLFW_DIR%\lib-mingw-w64\libglfw3.a" -Wl,--no-whole-archive -lOpenGL32 -lgdi32
 SET DEFINE_FLAGS=
 SET OUTPUT=-o %OUT_DIR%\%OUT_DIR_NAME%.exe 
